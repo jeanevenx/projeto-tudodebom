@@ -28,3 +28,8 @@ select * from produto;
 INSERT INTO itens_pedido VALUES (1, 1, 1, 2, 19.25, 38.5);
 INSERT INTO itens_pedido VALUES (2, 4, 2, 3, 78.67, 236.0);
 select * from  itens_pedido;
+
+
+
+
+    
