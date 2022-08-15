@@ -1,5 +1,7 @@
 package br.com.tudodebom.api.model;
 
-public class Endereco {
+import org.springframework.data.repository.CrudRepository;
+
+public interface Endereco {
 
 }
