@@ -30,6 +30,15 @@ public class ClienteController {
 		
 		return service.buscartodos();
 	}
+	//Recuperar cliente por id
+	@GetMapping("/cliente/{codigo}")
+	public ResponseEntuty<Cliente> buscarPeloId(@PathVariable Interger codigo){
+		Cliente res = service.buscarPeloId(codigo);
+		if (res ! = null) {
+			return ResposeEntity.ok(res);
+		}
+		return ResposeEntity.notFound().build();
+	}
 	
 	@PostMapping("/cliente")
 	public ResponseEntity<Cliente> incluirNovo (@RequestBody Cliente novo) {
@@ -39,6 +48,21 @@ public class ClienteController {
 	}
 	return ResponseEntity.ok(res);
 	
+	}
+	
+	@PutMapping("/cliente")
+	public ReponseEntity<Cliente> alterar(@RequestBody Cliente dados){
+		Cliente res = service.atualizarDados(dados);
+		if(res !+null) {
+			return ResponseEntity.ok(res);
+		}
+		return ResponseEntity.badResquit(). build();
+	}
+	
+	@DeleteMapping("/cliente/{id}")
+	public ResponseEntity<Cliente> excluirCliente(@PathVariable Integar id){
+		sevice.excluirCliente(id);
+		return ResponsseEntity.ok(null);
 	}
 
 }
