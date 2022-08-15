@@ -13,10 +13,10 @@ import javax.persistence.Table;
 
 public class Cliente {
 	
-	@Column(name = "id") // explicito o nome da coluna
+	@Column(name = "IDcliente") // explicito o nome da coluna
 	@Id // PK coresponde a chave primaria da tabela
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // auto increment
-	private Integer id;
+	private Integer IDcliente;
 
 	@Column(name = "nome", length = 50, nullable = false)
 	private String nome;
@@ -28,11 +28,12 @@ public class Cliente {
 	
 
 	
-	public int getId() {
-		return id;
+	
+	public Integer getIDcliente() {
+		return IDcliente;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setIDcliente(Integer iDcliente) {
+		IDcliente = iDcliente;
 	}
 	public String getNome() {
 		return nome;
