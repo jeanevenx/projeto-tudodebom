@@ -100,5 +100,8 @@ ENGINE = InnoDB;
 USE `bdtudodebom` ;
 desc cliente;
 INSERT INTO cliente VALUES (null, "Jose Neves","968.654.391-00","jose45@mail.com");
-INSERT INTO cliente VALUES (null, "Pedro Oliveira","865.432.987.10","pedroolv@mail.com");
+INSERT INTO cliente VALUES (null, "Pedro Oliveira","865.432.987-10","pedroolv@mail.com");
 INSERT INTO cliente VALUES (null, "Bruna Brito","143.456.779-00","brunabrito@mail.com");
+
+select * from cliente;
+desc cliente;
