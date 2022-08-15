@@ -34,6 +34,7 @@ public class ClienteController {
 	@PostMapping("/cliente")
 	public ResponseEntity<Cliente> incluirNovo (@RequestBody Cliente novo) {
 		Cliente res = service.criarDados(novo);
+		//resquest ta voltando 200
 	if(res==null) {
 		return ResponseEntity.badRequest().build();
 	}
