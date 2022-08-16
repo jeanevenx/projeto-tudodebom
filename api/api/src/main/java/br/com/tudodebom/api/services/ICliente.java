@@ -15,7 +15,9 @@ public interface ICliente {
 	
 	public Cliente buscarPeloId(Integer IDcliente);
 	
-	public void excluirDepartamento(Integer IDcliente);
+	public void excluirCliente(Integer IDcliente);
+
+	public Cliente atualizarDados(Cliente dados);
 	
 
 }

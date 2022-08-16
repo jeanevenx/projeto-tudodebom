@@ -5,8 +5,11 @@ import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,6 +33,14 @@ public class ClienteController {
 		
 		return service.buscartodos();
 	}
+	@GetMapping("/cliente/{codigo}")
+	public ResponseEntity<Cliente> buscarPeloId(@PathVariable Integer codigo){
+		Cliente res = service.buscarPeloId(codigo);
+		if (res != null) {
+			return ResponseEntity.ok(res);
+		}
+		return ResponseEntity.notFound().build();
+	}
 	
 	@PostMapping("/cliente")
 	public ResponseEntity<Cliente> incluirNovo (@RequestBody Cliente novo) {
@@ -39,6 +50,21 @@ public class ClienteController {
 	}
 	return ResponseEntity.ok(res);
 	
+	}
+	@PutMapping("/cliente")
+	public ResponseEntity<Cliente> alterar(@RequestBody Cliente dados){
+		
+		Cliente res = service.atualizarDados(dados);
+		if(res != null) {
+			return ResponseEntity.ok(res);
+		}
+		return ResponseEntity.badRequest(). build();
+	}
+	
+	@DeleteMapping("/cliente/{id}")
+	public ResponseEntity<Cliente> excluirCliente(@PathVariable Integer id){
+		service.excluirCliente(id);
+		return ResponseEntity.ok(null);
 	}
 
 }

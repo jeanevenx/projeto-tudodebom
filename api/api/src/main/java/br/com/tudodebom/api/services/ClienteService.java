@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.hibernate.internal.build.AllowSysOut;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import br.com.tudodebom.api.model.Cliente;
@@ -18,8 +19,8 @@ public class ClienteService implements ICliente {
 	public Cliente criarNovo(Cliente novo) {
 		// TODO Auto-generated method stub
 		
-		if(novo.getNome()!=null) {
-			return repository.save(novo);
+		if(novo.getNome()!= null && !novo.getCpf().trim().equals("")) {
+			return repository.save(novo); 
 		}
 		return null;
 	}
@@ -50,10 +51,20 @@ public class ClienteService implements ICliente {
 	}
 
 	@Override
-	public void excluirDepartamento(Integer IDcliente) {
+	public void excluirCliente(Integer IDcliente) {
 		// TODO Auto-generated method stub
-		repository.deleteById(IDcliente);
-		
+		repository.deleteById(IDcliente);	
+	}
+	@Override
+	public Cliente atualizarDados(Cliente dados) {
+		// TODO Auto-generated method stub
+		if(dados.getNome()!=null && dados.getIDcliente()!=null) {
+			return repository.save(dados);
+		}
+		else {
+			System.out.println("Está faltando dados");
+		}
+		return null;
 	}
 
 	

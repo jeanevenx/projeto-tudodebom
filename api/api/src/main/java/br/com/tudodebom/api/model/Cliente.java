@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import br.com.tudodebom.api.services.validarCPF;
+
 @Entity // indica que a classe é armazenável no banco
 @Table(name = "cliente") // torno explicito o nome da tabela
 
@@ -39,9 +41,11 @@ public class Cliente {
 		return nome;
 	}
 	public void setNome(String nome) {
+		
 		this.nome = nome;
 	}
 	public String getCpf() {
+		this.cpf = validarCPF.validar(cpf);
 		return cpf;
 	}
 	public void setCpf(String cpf) {
