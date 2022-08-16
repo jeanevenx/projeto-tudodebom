@@ -102,6 +102,24 @@ desc cliente;
 INSERT INTO cliente VALUES (null, "Jose Neves","968.654.391-00","jose45@mail.com");
 INSERT INTO cliente VALUES (null, "Pedro Oliveira","865.432.987-10","pedroolv@mail.com");
 INSERT INTO cliente VALUES (null, "Bruna Brito","143.456.779-00","brunabrito@mail.com");
+ --- endereco
+ select * from endereco;
+ alter table endereco modify column
+estado varchar(2);
+
+INSERT INTO endereco VALUES (null, "estado","cidade","cep","rua");
+INSERT INTO endereco VALUES (null, "SP","Sao Paulo","01234-567","Major Silva",1);
+INSERT INTO endereco VALUES (null,"ES","Vitoria","06543-123","Heitor Vila Lobos",1);
+INSERT INTO endereco VALUES (null,"BA","Salvador","41500-610","Parque São Cristóvão	",2);
+INSERT INTO endereco VALUES (null,"RJ","Rio de Janeiro","20020-000","Avenida Erasmo",2);
+
+
+
+INSERT INTO endereco VALUES (null,"Rua","Heitor Vila Lobos",98,"Casa 2","Vila das Flores","Osasco","06543-123","SP",2);
+INSERT INTO endereco VALUES (null,"Av","Raquel Meyer",173,"Ap 42 Bl 1","Centro","Vitoria","32987-122","ES",3);
+alter table endereco change column cliente_clienteID
+cliente_codigo int;
 
 select * from cliente;
-desc cliente;
+
+select * from bdtudodebom.endereco;
