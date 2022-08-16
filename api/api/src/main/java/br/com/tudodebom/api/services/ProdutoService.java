@@ -31,6 +31,8 @@ public class ProdutoService implements IProduto{
 			if(tipo.equals("genérico")) {
 				double desconto = produto.getPreco() * 0.2;
 				produto.setDescontoValido(desconto);
+			}else {
+				produto.setDescontoValido(0.0);
 			}
 			
 			return repo.save(produto);
@@ -45,6 +47,8 @@ public class ProdutoService implements IProduto{
 			if(tipo.equals("genérico")) {
 				double desconto = produto.getPreco() * 0.2;
 				produto.setDescontoValido(desconto);
+			}else {
+				produto.setDescontoValido(0.0);
 			}
 
 			return repo.save(produto);
