@@ -62,9 +62,6 @@ Essa é a rota que será utilizada para cadastrar um novo cliente no sistema.
 
 #### **Exemplos de resposta**
 
-```javascript
-// HTTP Status 200 / 201 / 204
-
 ```
 [
     {
@@ -122,16 +119,18 @@ Essa é a rota que será utilizada para editar um cliente no sistema através do
     Sem parâmetros de rota ou de query.  
     O corpo (body) deverá possuir um objeto com as seguintes propriedades (respeitando estes nomes):
 
+    -   idcliente
     -   nome
-    -   CPF
+    -   cpf
     -   email
 
 #### **Exemplo de requisição**
 
 ```
-// POST /cliente
+// PUT /cliente
 {
-      "nome": "Uallace Gomes",
+      "idcliente": 7
+      "nome": "Uallace Gomes Silva",
       "CPF": "032.565.984-76",
       "email": "uallace@gmail.com"
       
@@ -145,6 +144,6 @@ Essa é a rota que será utilizada para editar um cliente no sistema através do
       "nome": "Uallace Gomes",
       "CPF": "032.565.984-76",
       "email": "uallace@gmail.com",
-      "idcliente": 12
+      "idcliente": 7
 }
 ```
