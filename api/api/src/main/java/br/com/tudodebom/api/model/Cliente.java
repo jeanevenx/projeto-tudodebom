@@ -27,11 +27,10 @@ public class Cliente {
 	@NotEmpty
 	private String nome;
 
-	@Column(name = "cpf", length = 15, nullable = false,unique=true)
-	@CPF
+	@Column(name = "cpf", length = 15, nullable = false,unique=false)
 	private String cpf;
 	
-	@Column(name = "email", length = 45, nullable = false, unique = true)
+	@Column(name = "email", length = 45, nullable = false,unique=true)
 	@Email(message="Informe um e-mail válido") //vai verificar se seu email tem @ e ponto
 	private String email;
 	

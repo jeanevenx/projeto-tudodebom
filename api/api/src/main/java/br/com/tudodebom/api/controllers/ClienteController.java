@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.tudodebom.api.model.Cliente;
 import br.com.tudodebom.api.repository.ClienteRepository;
 import br.com.tudodebom.api.services.ClienteService;
+import br.com.tudodebom.api.services.ICliente;
 
 @RestController
 public class ClienteController {
@@ -28,7 +29,7 @@ public class ClienteController {
 	 */
 	@Autowired // faço a inseção de depencias
 	// vai pegar a definição de uma classe e gerar todos os sqls
-	private ClienteService service;
+	private ICliente service;
 
 	@GetMapping("/cliente")
 	public ArrayList<Cliente> recuperarTodos() {

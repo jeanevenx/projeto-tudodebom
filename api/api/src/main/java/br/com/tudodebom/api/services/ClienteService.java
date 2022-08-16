@@ -3,6 +3,7 @@ package br.com.tudodebom.api.services;
 import java.util.ArrayList;
 
 import org.hibernate.internal.build.AllowSysOut;
+import org.hibernate.validator.constraints.br.CPF;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,8 +19,11 @@ public class ClienteService implements ICliente {
 	
 
 	@Override
+	
 	public Cliente criarDados(Cliente novo) {
 		// TODO Auto-generated method stub
+		
+		
 		if (novo.getNome() != null) {
 			return repository.save(novo);
 		}
