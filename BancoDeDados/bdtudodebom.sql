@@ -117,6 +117,8 @@ INSERT INTO endereco VALUES (null,"RJ","Rio de Janeiro","20020-000","Avenida Era
 
 INSERT INTO endereco VALUES (null,"Rua","Heitor Vila Lobos",98,"Casa 2","Vila das Flores","Osasco","06543-123","SP",2);
 INSERT INTO endereco VALUES (null,"Av","Raquel Meyer",173,"Ap 42 Bl 1","Centro","Vitoria","32987-122","ES",3);
+alter table endereco change column cliente_clienteID
+cliente_codigo int;
 
 select * from cliente;
 

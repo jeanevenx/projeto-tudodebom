@@ -11,4 +11,5 @@ import br.com.tudodebom.api.model.Endereco;
 
 public interface EnderecoRepository extends CrudRepository< Endereco,Integer>{
 	
+	
 }

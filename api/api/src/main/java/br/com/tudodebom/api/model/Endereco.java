@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity // indica que a classe é armazenavel no banco
@@ -36,9 +38,10 @@ public class Endereco {
 	@Column(name = "rua", length = 45, nullable = true)
 	private String rua;
 	
-	@Column(name = "cliente_id_cliente",nullable = false)//chave estrageira
-	
-	private String cliente_id_cliente;
+	//vinculando endereco que tem o seu cleinte vinculado
+	@ManyToOne
+	@JoinColumn(name = "cliente_codigo")
+	private Cliente cliente;
 
 	
 	public Integer getIDendereco() {
@@ -81,13 +84,15 @@ public class Endereco {
 		this.rua = rua;
 	}
 
-	public String getCliente_id_cliente() {
-		return cliente_id_cliente;
+	public Cliente getCliente() {
+		return cliente;
 	}
 
-	public void setCliente_id_cliente(String cliente_id_cliente) {
-		this.cliente_id_cliente = cliente_id_cliente;
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
+
+	
 	
 	
 
