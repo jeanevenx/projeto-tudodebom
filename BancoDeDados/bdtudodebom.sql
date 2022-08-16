@@ -1,6 +1,6 @@
 
 
-CREATE SCHEMA IF NOT EXISTS `bdtudodebom` DEFAULT CHARACTER SET utf8 ;
+-CREATE SCHEMA IF NOT EXISTS `bdtudodebom` DEFAULT CHARACTER SET utf8 ;
 USE `bdtudodebom` ;
 
 -- -----------------------------------------------------
@@ -97,10 +97,10 @@ CREATE TABLE IF NOT EXISTS `bdtudodebom`.`endereco` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+USE `bdtudodebom` ;
+desc cliente;
+INSERT INTO cliente VALUES (null, "Jose Neves","968.654.391-00","jose45@mail.com");
+INSERT INTO cliente VALUES (null, "Pedro Oliveira","865.432.987-10","pedroolv@mail.com");
+INSERT INTO cliente VALUES (null, "Bruna Brito","143.456.779-00","brunabrito@mail.com");
 
-
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-
-
+select * from cliente;
