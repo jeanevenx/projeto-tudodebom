@@ -7,6 +7,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+
+import org.hibernate.validator.constraints.br.CPF;
 
 @Entity // indica que a classe é armazenável no banco
 @Table(name = "cliente") // torno explicito o nome da tabela
@@ -19,11 +23,16 @@ public class Cliente {
 	private Integer IDcliente;
 
 	@Column(name = "nome", length = 50, nullable = false)
+	//garantir que nos passemos um nome com pelo menos um caracter
+	@NotEmpty
 	private String nome;
 
 	@Column(name = "cpf", length = 15, nullable = false,unique=true)
+	@CPF
 	private String cpf;
+	
 	@Column(name = "email", length = 45, nullable = false, unique = true)
+	@Email(message="Informe um e-mail válido") //vai verificar se seu email tem @ e ponto
 	private String email;
 	
 
