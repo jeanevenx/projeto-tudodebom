@@ -9,6 +9,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity // indica que a classe é armazenavel no banco
 @Table(name = "endereco") // torno explicito o nome da tabela
 
@@ -41,6 +43,7 @@ public class Endereco {
 	//vinculando endereco que tem o seu cleinte vinculado
 	@ManyToOne
 	@JoinColumn(name = "cliente_codigo")
+	@JsonIgnoreProperties("ListaDeProdutos")
 	private Cliente cliente;
 
 	

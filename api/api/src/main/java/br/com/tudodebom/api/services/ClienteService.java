@@ -37,7 +37,7 @@ public class ClienteService implements ICliente {
 	public Cliente atualizarDados(Cliente dados) {
 		// TODO Auto-generated method stub
 
-		if (dados.getIDcliente()!= null && dados.getNome()!= null) {
+		if (dados.getIDcliente()!= null && dados.getNome()!= null){
 			
 			return repository.save(dados);
 

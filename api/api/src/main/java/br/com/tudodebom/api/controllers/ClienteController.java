@@ -67,11 +67,10 @@ public class ClienteController {
 	// necessário parametrizar o id
 	// caminho da url
 
-	@DeleteMapping("/cliente/{id}")
-	public ResponseEntity<Cliente> excluirCliente(@PathVariable Integer id) {
+	@DeleteMapping("/cliente/{IDcliente}")
+	public ResponseEntity<Cliente> excluirCliente(@PathVariable Integer IDcliente) {
 
-		service.excluirCliente(id);
-
+		service.excluirCliente(IDcliente);
 		return ResponseEntity.ok(null);
 
 	}
