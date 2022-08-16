@@ -104,4 +104,3 @@ INSERT INTO cliente VALUES (null, "Pedro Oliveira","865.432.987-10","pedroolv@ma
 INSERT INTO cliente VALUES (null, "Bruna Brito","143.456.779-00","brunabrito@mail.com");
 
 select * from cliente;
-desc cliente;
