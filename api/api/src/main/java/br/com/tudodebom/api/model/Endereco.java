@@ -3,6 +3,9 @@ package br.com.tudodebom.api.model;
 
 
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +13,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -44,10 +48,18 @@ public class Endereco {
 	
 	@Column(name = "rua", length = 45, nullable = true)
 	private String rua;
+	//interface generica do JPA
+	//uma pessoa para varios ennderecos
+	
+	@OneToMany(mappedBy="cliente", cascade= CascadeType.REMOVE)
+	//evita a recupeação de dados infinita
+	@JsonIgnoreProperties("cliente")
+	private List<Endereco> listaEndereco;
 	
 	//vinculando endereco que tem o seu cleinte vinculado
 	@ManyToOne
 	@JoinColumn(name = "cliente_codigo")
+	@JsonIgnoreProperties("listaEndereco")
 	private Cliente cliente;
 
 	

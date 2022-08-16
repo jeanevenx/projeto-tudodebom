@@ -30,5 +30,11 @@ public class EnderecoService implements IEndereco{
 		// TODO Auto-generated method stub
 		return repository.findById(IDcliente).orElse(null);
 	}
+	@Override
+	public void excluirCliente(Integer IDcliente) {
+		// TODO Auto-generated method stub
+		repository.deleteById(IDcliente);
+
+	}
 
 }

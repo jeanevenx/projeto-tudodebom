@@ -12,5 +12,6 @@ public Endereco criarDados(Endereco dados);
 	public ArrayList<Endereco> buscartodos();
 	
 	public Endereco buscarPeloId(Integer IDcliente);
+	public void excluirCliente(Integer IDendereco);
 
 }
