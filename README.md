@@ -7,7 +7,7 @@ Esta é uma RESTful API que permite o cadastro de novos clientes, incluindo dado
 ### **Cadastrar um cliente**
 #### `POST` `/cliente`
 
-Essa é a rota que será utilizada para cadastrar um novo veículo no sistema.
+Essa é a rota que será utilizada para cadastrar um novo cliente no sistema.
 
 -   **Requisição**  
     Sem parâmetros de rota ou de query.  
