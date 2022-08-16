@@ -1,5 +1,6 @@
 package br.com.tudodebom.api.model;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,10 +12,13 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@Entity // indica que a classe é armazenavel no banco
-@Table(name = "endereco") // torno explicito o nome da tabela
+
+
+
+import org.springframework.data.repository.CrudRepository;
 
 public class Endereco {
+
 
 	/***
 	 * 
