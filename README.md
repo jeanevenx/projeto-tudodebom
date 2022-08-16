@@ -147,3 +147,29 @@ Essa é a rota que será utilizada para editar um cliente no sistema através do
       "idcliente": 7
 }
 ```
+
+### **Deletar um cliente**
+
+#### `DELETE` `/cliente/:idcliente`
+
+Essa é a rota que será utilizada para deletar um cliente no sistema.
+
+-   **Requisição**  
+    O parâmetro de rota será o id do Cliente.  
+    
+
+#### **Exemplo de requisição**
+
+```
+// DELETE /cliente/:idcliente
+
+```
+
+#### **Exemplos de resposta**
+
+```
+// HTTP Status 200 
+{
+   "mensagem": "Cliente deletado com sucesso!"
+}
+```
