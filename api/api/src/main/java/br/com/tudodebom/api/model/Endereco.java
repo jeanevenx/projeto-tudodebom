@@ -11,10 +11,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-
-
-
 import org.springframework.data.repository.CrudRepository;
 
 public class Endereco {
