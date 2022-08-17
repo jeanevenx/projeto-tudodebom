@@ -27,6 +27,8 @@ public class Cliente {
 	private String cpf;
 	@Column(name = "email", length = 45, nullable = false, unique = true)
 	private String email;
+	@Column(name = "telefone", length = 20, nullable = false)
+	private String telefone;
 	
 
 	
@@ -56,5 +58,11 @@ public class Cliente {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public String getTelefone() {
+		return telefone;
+	}
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
 }

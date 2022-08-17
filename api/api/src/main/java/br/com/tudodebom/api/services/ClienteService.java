@@ -28,12 +28,17 @@ public class ClienteService implements ICliente {
 	@Override
 	public Cliente criarDados(Cliente dados) {
 		// TODO Auto-generated method stub
-		if(dados.getEmail()!=null) {
+		if(dados.getNome() !=null && getEmail() !=null && dados.getCpf()!=null && dados.getTelefone()!=null) {
 			return repository.save(dados);
 		}
 		else {
 			System.out.println("Está faltando dados");
 		}
+		return null;
+	}
+
+	private Object getEmail() {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
