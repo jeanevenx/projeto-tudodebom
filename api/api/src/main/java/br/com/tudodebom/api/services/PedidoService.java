@@ -13,13 +13,12 @@ public class PedidoService implements IPedido{
 	@Autowired 
 	PedidoRepository repo;
 	
-	@Autowired
-	IProduto produtoService;
-	
 	@Override
 	public Pedido inserirNovoPedido(Pedido pedido) {
 		for(ItemPedido item: pedido.getItens()) {
 			item.setPedido(pedido);
+			
+			System.out.println(item.getPedido());
 			
 		}
 		return repo.save(pedido);
