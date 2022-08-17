@@ -2,6 +2,11 @@ package br.com.tudodebom.api.services;
 
 import java.util.ArrayList;
 
+<<<<<<< HEAD
+=======
+import org.hibernate.internal.build.AllowSysOut;
+import org.hibernate.validator.constraints.br.CPF;
+>>>>>>> e046d749d5f547409627cf1cec6ff89a2cd6dea8
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,10 +23,17 @@ public class ClienteService implements ICliente {
 	
 
 	@Override
+	
 	public Cliente criarDados(Cliente novo) {
+<<<<<<< HEAD
 		for (Endereco endereco: novo.getEnderecos()) {
 			endereco.setCliente(novo);
 		}
+=======
+		// TODO Auto-generated method stub
+		
+		
+>>>>>>> e046d749d5f547409627cf1cec6ff89a2cd6dea8
 		if (novo.getNome() != null) {
 			return repository.save(novo);
 		}

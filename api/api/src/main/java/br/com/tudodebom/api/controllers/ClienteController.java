@@ -18,13 +18,24 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.tudodebom.api.model.Cliente;
 import br.com.tudodebom.api.repository.ClienteRepository;
 import br.com.tudodebom.api.services.ClienteService;
+import br.com.tudodebom.api.services.ICliente;
 
 @RestController
 public class ClienteController {
 
+<<<<<<< HEAD
 	
 	@Autowired 
 	private ClienteService service;
+=======
+	/***
+	 * No controller será criada as classes que tem os métodos que será permitido
+	 * relizar o crud sendo assim aplicado os endpoints /
+	 */
+	@Autowired // faço a inseção de depencias
+	// vai pegar a definição de uma classe e gerar todos os sqls
+	private ICliente service;
+>>>>>>> e046d749d5f547409627cf1cec6ff89a2cd6dea8
 
 	@GetMapping("/cliente")
 	public ArrayList<Cliente> recuperarTodos() {

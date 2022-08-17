@@ -119,7 +119,10 @@ INSERT INTO endereco VALUES (null,"Rua","Heitor Vila Lobos",98,"Casa 2","Vila da
 INSERT INTO endereco VALUES (null,"Av","Raquel Meyer",173,"Ap 42 Bl 1","Centro","Vitoria","32987-122","ES",3);
 alter table endereco change column cliente_clienteID
 cliente_codigo int;
+alter table cliente modify column
+cpf varchar(15);
 
 select * from cliente;
+select * from  produto;
 
 select * from bdtudodebom.endereco;
