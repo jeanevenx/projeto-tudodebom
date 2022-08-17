@@ -22,12 +22,8 @@ import br.com.tudodebom.api.services.ClienteService;
 @RestController
 public class ClienteController {
 
-	/***
-	 * No controller será criada as classes que tem os métodos que será permitido
-	 * relizar o crud sendo assim aplicado os endpoints /
-	 */
-	@Autowired // faço a inseção de depencias
-	// vai pegar a definição de uma classe e gerar todos os sqls
+	
+	@Autowired 
 	private ClienteService service;
 
 	@GetMapping("/cliente")
@@ -36,11 +32,10 @@ public class ClienteController {
 		return service.buscartodos();
 	}
 
-	@PostMapping("/cliente") // necessário essa validação para @email e @enpity funcionar
+	@PostMapping("/cliente") 
 	public ResponseEntity<Cliente> incluirNovo(@Valid @RequestBody Cliente novo) {
 		Cliente res = service.criarDados(novo);
-		// resquest ta voltando 200
-		// o objeto responseEntity me da uma resposta http
+		
 		if (res == null) {
 			return ResponseEntity.badRequest().build();
 		}
@@ -63,9 +58,6 @@ public class ClienteController {
 
 	}
 
-	// passa na url pra pegar o id de cliente
-	// necessário parametrizar o id
-	// caminho da url
 
 	@DeleteMapping("/cliente/{IDcliente}")
 	public ResponseEntity<Cliente> excluirCliente(@PathVariable Integer IDcliente) {
@@ -86,7 +78,7 @@ public class ClienteController {
 
 		}
 
-		return ResponseEntity.badRequest().build();
+		return ResponseEntity.notFound().build();
 
 	}
 

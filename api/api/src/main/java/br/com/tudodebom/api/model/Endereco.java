@@ -17,20 +17,14 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import org.springframework.data.repository.CrudRepository;
 
+
+@Entity
+@Table(name="endereco")
 public class Endereco {
 
-
-	/***
-	 * 
-	 *foi feito a estruturação dos atributos 
-	 *para poder se comunicar com os campos do banco de dados
-/
-	 */
-	
-	
-	@Column(name = "IDendereco") // explicito o nome da coluna
-	@Id // PK coresponde a chave primaria da tabela
-	@GeneratedValue(strategy = GenerationType.IDENTITY) // auto incremete
+	@Id 
+	@Column(name = "IDendereco")
+	@GeneratedValue(strategy = GenerationType.IDENTITY) 
 	private Integer IDendereco;
 
 	@Column(name = "estado", length = 45, nullable = false)
@@ -38,6 +32,7 @@ public class Endereco {
 
 	@Column(name = "cidade", length = 45, nullable = false)
 	private String cidade;
+	
 	@Column(name = "cep", length = 15, nullable = false, unique = true)
 	private String cep;
 	
@@ -46,8 +41,8 @@ public class Endereco {
 	
 	//vinculando endereco que tem o seu cleinte vinculado
 	@ManyToOne
-	@JoinColumn(name = "cliente_codigo")
-	@JsonIgnoreProperties("ListaDeProdutos")
+	@JoinColumn(name = "cliente_IDcliente")
+	@JsonIgnoreProperties("enderecos")
 	private Cliente cliente;
 
 	
