@@ -1,6 +1,5 @@
 package br.com.tudodebom.api.model;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -33,13 +32,20 @@ public class Endereco {
 	
 	@Column(name = "rua", length = 45, nullable = true)
 	private String rua;
-	
+
 	@ManyToOne
 	@JoinColumn(name="cliente_IDcliente")
 	@JsonIgnoreProperties("enderecos")
 	private Cliente cliente;
-
 	
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
 	public Integer getIDendereco() {
 		return IDendereco;
 	}
@@ -80,13 +86,6 @@ public class Endereco {
 		this.rua = rua;
 	}
 
-	public Cliente getCliente() {
-		return cliente;
-	}
-
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
 
 	
 	
